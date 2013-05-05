@@ -11,7 +11,6 @@ def _execute(cmd):
 
 if __name__ == '__main__':
     print("Running from", os.path.abspath("."))
-    if platform.python_version() < "3.3":
-        _execute("pylint --rcfile=.pylintrc setup.py")
-        _execute("pylint --rcfile=.pylintrc shakedown")
+    _execute("pylint --rcfile=.pylintrc setup.py")
+    _execute("pylint --rcfile=.pylintrc shakedown")
     _execute("nosetests -w tests")
